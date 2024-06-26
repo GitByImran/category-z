@@ -161,15 +161,64 @@ nav {
 }
 
 .features-section .features-card {
+  position: relative;
+  display: inline-block;
   width: 100%;
 }
 
-.features-section .features-card img {
+.features-section .features-card .image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.features-card img {
   width: 100%;
+  display: block;
+}
+
+.features-card .image-container .hover-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  transform: scale(1.2);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out !important;
+  z-index: 1;
+}
+
+.features-card .image-container:hover .hover-text {
+  transform: scale(1);
+  opacity: 1;
+  cursor: pointer;
+}
+
+.features-card .image-container .hover-text p {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  place-content: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.features-card .features-card-text {
+  padding: 20px 0;
+  background: white;
 }
 
 .features-section .features-card .features-card-text {
-  margin: 10px 0;
   display: flex;
   justify-content: space-between;
 }
